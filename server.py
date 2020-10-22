@@ -45,3 +45,7 @@ def parse_data(uri:str):
 @app.post("/")
 def get_data(uri:Uri):
     return parse_data(uri.uri)
+
+@app.get("/heath")
+def get_health():
+  return {"ping":"Its working fast 🚅"}
