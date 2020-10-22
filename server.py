@@ -35,7 +35,9 @@ def parse_data(uri:str):
       soup = BeautifulSoup(k['description'], 'html.parser')
       for link in soup.find_all('img'):
         data_dict["img"]=link.get('src')
-      # print(k['content:encoded'])
+      
+      if "img" not in data_dict.keys():
+        data_dict["img"]=''
     except Exception as e:
       print()
     l.append(data_dict)
